@@ -1,15 +1,12 @@
 import React, { FC, useState } from "react";
 
-interface PropsHeader {
-  theme?: string;
-  setTheme?: Function;
-  title: string;
-}
+//*types
+import {HeaderProps} from './types.services'
 
 /*let toggle = "text-gray-700";*/
 let moveButtonTheme = "-left-1";
 
-export const Header: FC<PropsHeader> = ({
+export const Header: FC<HeaderProps> = ({
   title,
   theme,
   setTheme,

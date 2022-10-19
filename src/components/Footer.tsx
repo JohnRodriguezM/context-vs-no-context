@@ -1,8 +1,13 @@
-import React from "react";
+import React, {FC} from "react";
 
-export const Footer = (props:any) => {
+import {FooterProps} from './types.services'
+
+export const Footer: FC<FooterProps> = ({
+  theme,
+  ...props
+}) => {
   return (
-    <footer className = {props.theme}>
+    <footer className = {theme}>
       <h3>Mi footer</h3>
     </footer>
   );

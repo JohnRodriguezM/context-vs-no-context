@@ -1,13 +1,8 @@
 import React, { FC } from "react";
+//*types
+import {MainProps} from './types.services'
 
-interface PropsMain {
-  theme?: string;
-  setTheme?: Function;
-  title?: string;
-  children?: JSX.Element | JSX.Element[] | string | string[] | React.ReactElement | React.ReactElement[] | React.ReactNode | React.ReactNode[];
-}
-
-export const Main: FC<PropsMain> = ({
+export const Main: FC<MainProps> = ({
   title,
   theme,
   setTheme,
