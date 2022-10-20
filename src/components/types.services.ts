@@ -1,12 +1,14 @@
 export interface PropsBase {
   theme?: string;
   setTheme?: Function;
+  setLanguage?: Function;
   title: string;
 }
-
 export type PartialBase = Partial<PropsBase>;
 
-export interface HeaderProps extends PropsBase {}
+export interface HeaderProps extends PropsBase {
+  titleInitial?: string;
+}
 export interface MainProps extends Partial<PropsBase> {
   children:
     | JSX.Element
@@ -18,7 +20,9 @@ export interface MainProps extends Partial<PropsBase> {
     | React.ReactNode
     | React.ReactNode[];
 }
-export interface FooterProps extends Omit<PropsBase, "title"> {}
+export interface FooterProps extends Omit<PropsBase, "title"> {
+  footerTitle?: string;
+}
 
 /*
 interface Todo {

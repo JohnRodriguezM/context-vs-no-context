@@ -1,15 +1,17 @@
 import React, { FC, useState } from "react";
 
 //*types
-import {HeaderProps} from './types.services'
+import { HeaderProps } from "./types.services";
 
 /*let toggle = "text-gray-700";*/
 let moveButtonTheme = "-left-1";
 
 export const Header: FC<HeaderProps> = ({
+  titleInitial,
   title,
   theme,
   setTheme,
+  setLanguage,
   ...props
 }) => {
   const handleClick = (e: any) => {
@@ -24,12 +26,19 @@ export const Header: FC<HeaderProps> = ({
     }
   };
 
+  const handleLanguage = (e: any) => {
+    e.target.value === "Choose a language" ? "" : setLanguage?.(e.target.value);
+  };
+
   return (
-    <header className = {theme}>
+    <header className={theme}>
       <h2 className="text-red-600">{title}</h2>
-      <h3>Mi cabecera</h3>
+      <h3>{titleInitial}</h3>
       <>
-        <select className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+        <select
+          onChange={handleLanguage}
+          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        >
           <option selected>Choose a language</option>
           <option value="es">ES</option>
           <option value="en">EN</option>
