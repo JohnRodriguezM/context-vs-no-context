@@ -43,9 +43,6 @@ export const NoIncludeContext = () => {
             <button onClick={() => setAuth(true)}>Login</button>
           </>
         )}
-        {/* <h2 className="text-white">{welcome}</h2>
-        <h2>{welcomeUser}</h2>
-        <p className="text-white">{content}</p>*/}
       </Main>
       <hr />
       <Footer theme={theme} footerTitle={copy} />
