@@ -2,7 +2,7 @@ export interface PropsBase {
   theme?: string;
   setTheme?: Function;
   setLanguage?: Function;
-  title: string;
+  title?: string;
 }
 export type PartialBase = Partial<PropsBase>;
 

@@ -1,24 +1,15 @@
 import React, { FC, useState, useContext } from "react";
 import { ThemeContext } from "../../context/ThemeContext";
-
+import { LanguageContext} from "../../context/LanguageContext"
 //*types
 import { HeaderProps } from "../types.services";
 
-/*let toggle = "text-gray-700";*/
-let moveButtonTheme = "-left-1";
-
 export const HeaderContext: FC<HeaderProps> = ({
-  titleInitial,
-  title,
-  setLanguage,
   ...props
 }) => {
 
   const {theme, handleClickTheme, move} = useContext(ThemeContext)
-
-  const handleLanguage = (e: any) => {
-    e.target.value === "Choose a language" ? "" : setLanguage?.(e.target.value);
-  };
+  const { title,titleInitial, handleLanguage} = useContext(LanguageContext)
 
   return (
     <header className={theme}>

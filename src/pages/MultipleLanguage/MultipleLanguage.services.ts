@@ -15,7 +15,7 @@ export const translation: any = {
     },
   },
   en: {
-    mainTitle: "app multilanguage with context api",
+    mainTitle: "app multilanguage with out context api",
     header: {
       titleInitial: "My header",
       title: " dark and white theme with out context API ",
@@ -36,7 +36,7 @@ export const translationContext: any = {
     mainTitle: "APP multidioma con context api",
     header: {
       titleInitial: "Mi cabecera",
-      title: " tema oscuro y claro sin context API ",
+      title: " tema oscuro y claro con context API ",
     },
     main: {
       welcome: "Logueate para ver el contenido",
