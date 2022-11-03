@@ -14,43 +14,59 @@ import { SIContextApi } from "./pages/MultipleLanguage/SIContextApi";
 import { IncludeContext } from "./pages/UserSession/IncludeContext";
 import { NoIncludeContext } from "./pages/UserSession/NoIncludeContext";
 
+import { LanguageProvider } from "./context/LanguageContext";
+import { ThemeProvider } from "./context/ThemeContext";
+import { AuthProvider } from "./context/LoginUserContext";
+
 const App = () => {
   return (
-    <div className="App">
-      <Router basename={""}>
-        <Routes>
-          <Route path="/" element={<Home />} />
+    <AuthProvider>
+      <ThemeProvider>
+        <LanguageProvider>
+          <div className="App">
+            <Router basename={""}>
+              <Routes>
+                <Route path="/" element={<Home />} />
 
-          {/*with --OUT-- context api dark - light*/}
-          <Route
-            path="/whiteBlackWithOutContext"
-            element={<WithOutContext />}
-          />
-          {/*with context api dark - light*/}
-          <Route path="/whiteBlackWithContext" element={<WithContext />} />
+                {/*with --OUT-- context api dark - light*/}
+                <Route
+                  path="/whiteBlackWithOutContext"
+                  element={<WithOutContext />}
+                />
+                {/*with context api dark - light*/}
+                <Route
+                  path="/whiteBlackWithContext"
+                  element={<WithContext />}
+                />
 
-          {/*with --OUT-- context api multi language*/}
-          <Route
-            path="/multipleLanguageWithOutContext"
-            element={<NoContextApi />}
-          />
-          {/*with context api multi language*/}
-          <Route
-            path="/multipleLanguageWithContext"
-            element={<SIContextApi />}
-          />
-          {/*with --OUT-- context api user session*/}
-          <Route
-            path="/userSessionWithOutContext"
-            element={<NoIncludeContext />}
-          />
-          {/*with context api user session*/}
-          <Route path="/userSessionWithContext" element={<IncludeContext />} />
+                {/*with --OUT-- context api multi language*/}
+                <Route
+                  path="/multipleLanguageWithOutContext"
+                  element={<NoContextApi />}
+                />
+                {/*with context api multi language*/}
+                <Route
+                  path="/multipleLanguageWithContext"
+                  element={<SIContextApi />}
+                />
+                {/*with --OUT-- context api user session*/}
+                <Route
+                  path="/userSessionWithOutContext"
+                  element={<NoIncludeContext />}
+                />
+                {/*with context api user session*/}
+                <Route
+                  path="/userSessionWithContext"
+                  element={<IncludeContext />}
+                />
 
-          <Route path="*" element={<h1>404: Not Found</h1>} />
-        </Routes>
-      </Router>
-    </div>
+                <Route path="*" element={<h1>404: Not Found</h1>} />
+              </Routes>
+            </Router>
+          </div>
+        </LanguageProvider>
+      </ThemeProvider>
+    </AuthProvider>
   );
 };
 
